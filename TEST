@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<meta charset="utf-8">
+
+<html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<input type='file' accept='text/plain' onchange='openFile(event)'><br>
+<img id='output'>
+<script>
+	var list = []
+	var openFile = function(event) 
+	{	var input = event.target;
+		var reader = new FileReader();
+    	reader.onload = function()
+    	{	var list = reader.result.split("\n");
+    		for(int i=0; i<list.length)
+      		document.writeln(list);
+      		
+    	};
+    	reader.readAsText(input.files[0]);
+  	};
+</script>
+
+</head>
+
+<body>
+<script>
+</script>
+</body>
+
+</html> 
