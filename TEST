@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<meta charset="utf-8">
-
-<html>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<input type='file' accept='text/plain' onchange='openFile(event)'><br>
-<img id='output'>
-<script>
-	var list = []
+var personArray = []
+	var nameArray = []
 	var openFile = function(event) 
 	{	var input = event.target;
-		var reader = new FileReader();
+		var reader = new FileReader();									//read file
     	reader.onload = function()
-    	{	var list = reader.result.split("\n");
-    		for(int i=0; i<list.length)
-      		document.writeln(list);
+    	{	var personArray = reader.result.split("\n"); 				//personArray has array of full names
+    		
+    		for(i=0; i<personArray.length; i++) 						//for each person
+    		{	var nameOneArray = personArray[i].split(" ");			//split names by space
+    			var nameTwoArray = personArray[i+1].split(" ")			//compare first letter of last name
+// ##########################################
+    			personArray.sort(function(nameArray[nameArray.length-1]),nameArray[nameArray.length]);
+// ##########################################
+    			for(j=0; j<nameArray.length; j++)						//Split and write names
+    			{	document.write(nameArray[j]);
+
+    			}
+    			document.write("<br>")
+    		}
+
+
+      		
       		
     	};
     	reader.readAsText(input.files[0]);
   	};
-</script>
-
-</head>
-
-<body>
-<script>
-</script>
-</body>
-
-</html> 
